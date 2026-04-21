@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Catálogo</title>
+    
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones - Font Awesome Lib -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sessão de Cabeçalho Superior Fixo -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="desktop-menu-icon" style="display: none; cursor: pointer; color: var(--text-muted);">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <h1 class="logo">Logo<span>.</span></h1>
+            
+            <div class="header-actions">
+                <div class="header-icon-btn" id="openWishlistBtn">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="badge-count" id="wishlistCount">0</span>
+                </div>
+                <div class="header-icon-btn" id="openCartBtn">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                    <span class="badge-count" id="cartCount">0</span>
+                </div>
+                <div class="search-icon">
+                    <i class="fa-solid fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Sessão Hero - Banner Carrossel Grande Rotativo -->
+        <section class="hero-section">
+            <div class="carousel-container">
+                <div class="carousel-track" id="heroCarousel">
+                    <!-- Slide 1 -->
+                    <div class="hero-card slide">
+                        <div class="hero-content">
+                            <span class="badge badge-purple">NOVO LANÇAMENTO</span>
+                            <h2>PRÉ-TREINO<br>ELITE XTREME</h2>
+                            <p>Energia explosiva e foco laser para seus treinos mais intensos.</p>
+                            <button class="btn btn-primary hero-buy-btn" data-id="h1" data-title="Elite Xtreme Pro" data-price="189.90" data-category="PRÉ-TREINOS">
+                                COMPRAR AGORA <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="hero-card slide" style="background: linear-gradient(135deg, #101010 0%, #151515 100%);">
+                        <div class="hero-content">
+                            <span class="badge badge-blue">OFERTA ESPECIAL</span>
+                            <h2>COMBO FORÇA<br>WHEY + CREATINA</h2>
+                            <p>A união perfeita para ganho de massa magra e explosão muscular.</p>
+                            <button class="btn btn-primary hero-buy-btn" data-id="c1" data-title="Combo Força: Whey + Creatina" data-price="319.90" data-category="COMBOS">
+                                APROVEITAR OFERTA <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="hero-card slide" style="background: linear-gradient(135deg, #0a1128 0%, #151515 100%);">
+                        <div class="hero-content">
+                            <span class="badge badge-purple" style="background-color: #3b82f6; color: #fff;">PÓS-TREINO</span>
+                            <h2>BCAA ULTRA<br>RECOVERY X</h2>
+                            <p>Recupere sua musculatura até 3x mais rápido sem dores no dia seguinte.</p>
+                            <button class="btn btn-primary hero-buy-btn" data-id="p3" data-title="BCAA Recovery X" data-price="129.90" data-category="AMINOÁCIDOS">
+                                COMPRAR AGORA <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-pagination">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </section>
+
+        <!-- Filtro Navegacional das Abas de Categorias -->
+        <section class="categories-section">
+            <ul class="category-tabs">
+                <li class="tab active"><a href="#destaques">Todos</a></li>
+                <li class="tab"><a href="#lancamentos">Lançamentos</a></li>
+                <li class="tab"><a href="#combos">Combos</a></li>
+                <li class="tab"><a href="#proteinas">Proteínas</a></li>
+                <li class="tab"><a href="#pre-treinos">Pré-treinos</a></li>
+                <li class="tab"><a href="#creatina">Creatina</a></li>
+                <li class="tab"><a href="#vitaminas">Vitaminas</a></li>
+            </ul>
+        </section>
+
+        <!-- DESTAQUES -->
+        <section class="featured-section" id="destaques">
+            <div class="section-header"><h3>DESTAQUES</h3></div>
+            <div class="product-grid">
+                <!-- 1 -->
+                <div class="product-card" data-id="p1" data-title="Whey Isolate Carbon" data-price="249.90" data-category="PROTEÍNAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">Whey Isolate Carbon</h4>
+                        <div class="product-bottom"><span class="price">R$ 249,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="product-card" data-id="p2" data-title="Creatina Pure 300g" data-price="99.90" data-category="CREATINA">
+                    <span class="badge badge-blue product-badge">MAIS VENDIDO</span>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">CREATINA</span>
+                        <h4 class="product-title">Creatina Pure 300g</h4>
+                        <div class="product-bottom"><span class="price">R$ 99,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="product-card" data-id="p3" data-title="BCAA Recovery X" data-price="129.90" data-category="AMINOÁCIDOS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">AMINOÁCIDOS</span>
+                        <h4 class="product-title">BCAA Recovery X</h4>
+                        <div class="product-bottom"><span class="price">R$ 129,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="product-card" data-id="p4" data-title="Omega 3 Ultra" data-price="89.90" data-category="VITAMINAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">VITAMINAS</span>
+                        <h4 class="product-title">Omega 3 Ultra</h4>
+                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROTEÍNAS -->
+        <section class="featured-section" id="proteinas" style="margin-top: 40px;">
+            <div class="section-header"><h3>PROTEÍNAS</h3></div>
+            <div class="product-grid">
+                <div class="product-card" data-id="p5" data-title="Whey Concentrado 100%" data-price="149.90" data-category="PROTEÍNAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Whey Concentrado 100%</h4>
+                        <div class="product-bottom"><span class="price">R$ 149,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="p6" data-title="Whey Isolado Zero Lactose" data-price="299.90" data-category="PROTEÍNAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Whey Isolado Zero Lactose</h4>
+                        <div class="product-bottom"><span class="price">R$ 299,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="p7" data-title="Super Whey 3W Blend" data-price="179.90" data-category="PROTEÍNAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Super Whey 3W Blend</h4>
+                        <div class="product-bottom"><span class="price">R$ 179,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="p8" data-title="Beef Protein Hidrolisado" data-price="210.00" data-category="PROTEÍNAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Beef Protein Hidrolisado</h4>
+                        <div class="product-bottom"><span class="price">R$ 210,00</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRÉ-TREINOS -->
+        <section class="featured-section" id="pre-treinos" style="margin-top: 40px;">
+            <div class="section-header"><h3>PRÉ-TREINOS</h3></div>
+            <div class="product-grid">
+                <div class="product-card" data-id="p9" data-title="SuperCoffee Mental Focus" data-price="159.90" data-category="PRÉ-TREINOS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span><h4 class="product-title">SuperCoffee Mental Focus</h4>
+                        <div class="product-bottom"><span class="price">R$ 159,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="h1" data-title="Pré-treino Elite Xtreme" data-price="189.90" data-category="PRÉ-TREINOS">
+                    <span class="badge badge-purple product-badge">NOVO</span>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span><h4 class="product-title">Elite Xtreme Pro</h4>
+                        <div class="product-bottom"><span class="price">R$ 189,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="p10" data-title="Nuclear Rush" data-price="89.90" data-category="PRÉ-TREINOS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span><h4 class="product-title">Nuclear Rush</h4>
+                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- COMBOS PROMOCIONAIS -->
+        <section class="featured-section" id="combos" style="margin-top: 40px;">
+            <div class="section-header"><h3>COMBOS PROMOCIONAIS</h3></div>
+            <div class="product-grid">
+                <div class="product-card" data-id="c1" data-title="Combo Força: Whey + Creatina" data-price="319.90" data-category="COMBOS">
+                    <span class="badge badge-blue product-badge">OFERTA</span>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">COMBOS</span><h4 class="product-title">Combo Força: Whey + Creatina</h4>
+                        <div class="product-bottom"><span class="price">R$ 319,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="c2" data-title="Combo Emagrecimento Extremo" data-price="210.00" data-category="COMBOS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-info">
+                        <span class="category">COMBOS</span><h4 class="product-title">Combo Emagrecimento Extremo</h4>
+                        <div class="product-bottom"><span class="price">R$ 210,00</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Camada Externa Translúcida Fundo Escuro para Modal do Carrinho/Wish -->
+    <div class="overlay" id="globalOverlay"></div>
+
+    <!-- Barra do Carrinho Inteligente Completo -->
+    <aside class="sidebar" id="cartSidebar">
+        <div class="sidebar-header">
+            <h2><i class="fa-solid fa-shopping-cart"></i> Carrinho</h2>
+            <button class="close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-content" id="cartItemsContainer">
+            <!-- Pela programação JS os itens criados do pedido vão encaixar aqui na DOM visível -->
+        </div>
+        <div class="sidebar-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary" id="checkoutBtn" style="width:100%; border-radius:30px;">
+                <i class="fa-brands fa-whatsapp"></i> FINALIZAR PEDIDO
+            </button>
+        </div>
+    </aside>
+
+    <!-- Barra Lateral de Desejos Exibindo -->
+    <aside class="sidebar" id="wishlistSidebar">
+        <div class="sidebar-header">
+            <h2><i class="fa-solid fa-heart"></i> Desejos</h2>
+            <button class="close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-content" id="wishlistItemsContainer">
+            <!-- Listagens de Desejos (itens com coraçaozinho ativo) virão injetados aqui -->
+        </div>
+    </aside>
+
+    <!-- Premium Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="logo">Logo<span>.</span></h2>
+                <p>O melhor catálogo de suplementos para potencializar os seus treinos. Elevando sua performance todos os dias.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Contato</h4>
+                <p><i class="fa-solid fa-phone"></i> (17) 99999-9999</p>
+                <p><i class="fa-solid fa-envelope"></i> contato@email.com</p>
+            </div>
+            <div class="footer-location">
+                <h4>Localização</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Av. A, 1111<br>Votuporanga - SP, 15500-000</p>
+            </div>
+            <div class="footer-legal">
+                <h4>Legal</h4>
+                <p>CNPJ: 11.111.111/0001-11</p>
+                <p>&copy; 2026 Nome Suplementos.<br>Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Botão Oficial Físico Solto Do WhatsApp Para Flutuar no Canto -->
+    <a href="https://wa.me/5517997338505?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20sua%20marca." target="_blank" class="floating-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</body>
+</html>
