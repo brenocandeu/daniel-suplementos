@@ -1,31 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <title>Catálogo</title>
-    
     <!-- Fontes Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Lexend:ital,wght@0,600;0,700;0,800;1,700&amp;display=swap"
+        rel="stylesheet" />
     <!-- Ícones - Font Awesome Lib -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-
     <!-- Sessão de Cabeçalho Superior Fixo -->
     <header class="app-header">
         <div class="header-container">
             <div class="desktop-menu-icon" style="display: none; cursor: pointer; color: var(--text-muted);">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            
-            <img src="Logo.png" alt="Logo" style="height: 35px; width: auto; object-fit: contain; cursor: pointer;">
-            
+            <img alt="Logo" src="Logo.png" style="height: 35px; width: auto; object-fit: contain; cursor: pointer;" />
             <div class="header-actions">
                 <div class="header-icon-btn" id="openWishlistBtn">
                     <i class="fa-solid fa-heart"></i>
@@ -41,7 +38,6 @@
             </div>
         </div>
     </header>
-
     <main class="main-content">
         <!-- Sessão Hero - Banner Carrossel Grande Rotativo -->
         <section class="hero-section">
@@ -51,9 +47,10 @@
                     <div class="hero-card slide">
                         <div class="hero-content">
                             <span class="badge badge-purple">NOVO LANÇAMENTO</span>
-                            <h2>PRÉ-TREINO<br>ELITE XTREME</h2>
+                            <h2>PRÉ-TREINO<br />ELITE XTREME</h2>
                             <p>Energia explosiva e foco laser para seus treinos mais intensos.</p>
-                            <button class="btn btn-primary hero-buy-btn" data-id="h1" data-title="Elite Xtreme Pro" data-price="189.90" data-category="PRÉ-TREINOS">
+                            <button class="btn btn-primary hero-buy-btn" data-category="PRÉ-TREINOS" data-id="h1"
+                                data-price="189.90" data-title="Elite Xtreme Pro">
                                 COMPRAR AGORA <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -62,9 +59,10 @@
                     <div class="hero-card slide" style="background: linear-gradient(135deg, #101010 0%, #151515 100%);">
                         <div class="hero-content">
                             <span class="badge badge-blue">OFERTA ESPECIAL</span>
-                            <h2>COMBO FORÇA<br>WHEY + CREATINA</h2>
+                            <h2>COMBO FORÇA<br />WHEY + CREATINA</h2>
                             <p>A união perfeita para ganho de massa magra e explosão muscular.</p>
-                            <button class="btn btn-primary hero-buy-btn" data-id="c1" data-title="Combo Força: Whey + Creatina" data-price="319.90" data-category="COMBOS">
+                            <button class="btn btn-primary hero-buy-btn" data-category="COMBOS" data-id="c1"
+                                data-price="319.90" data-title="Combo Força: Whey + Creatina">
                                 APROVEITAR OFERTA <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -72,10 +70,12 @@
                     <!-- Slide 3 -->
                     <div class="hero-card slide" style="background: linear-gradient(135deg, #0a1128 0%, #151515 100%);">
                         <div class="hero-content">
-                            <span class="badge badge-purple" style="background-color: #3b82f6; color: #fff;">PÓS-TREINO</span>
-                            <h2>BCAA ULTRA<br>RECOVERY X</h2>
+                            <span class="badge badge-purple"
+                                style="background-color: #3b82f6; color: #fff;">PÓS-TREINO</span>
+                            <h2>BCAA ULTRA<br />RECOVERY X</h2>
                             <p>Recupere sua musculatura até 3x mais rápido sem dores no dia seguinte.</p>
-                            <button class="btn btn-primary hero-buy-btn" data-id="p3" data-title="BCAA Recovery X" data-price="129.90" data-category="AMINOÁCIDOS">
+                            <button class="btn btn-primary hero-buy-btn" data-category="AMINOÁCIDOS" data-id="p3"
+                                data-price="129.90" data-title="BCAA Recovery X">
                                 COMPRAR AGORA <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -88,168 +88,876 @@
                 <div class="dot"></div>
             </div>
         </section>
-
         <!-- Filtro Navegacional das Abas de Categorias -->
         <section class="categories-section">
             <ul class="category-tabs">
-                <li class="tab active"><a href="#destaques">Todos</a></li>
-                <li class="tab"><a href="#lancamentos">Lançamentos</a></li>
-                <li class="tab"><a href="#combos">Combos</a></li>
-                <li class="tab"><a href="#proteinas">Proteínas</a></li>
+                <li class="tab active"><a href="#proteinas">Proteínas</a></li>
                 <li class="tab"><a href="#pre-treinos">Pré-treinos</a></li>
                 <li class="tab"><a href="#creatina">Creatina</a></li>
-                <li class="tab"><a href="#vitaminas">Vitaminas</a></li>
+                <li class="tab"><a href="#termogenicos">Termogênicos</a></li>
+                <li class="tab"><a href="#pastas-de-amendoim">Pastas de Amendoim</a></li>
+                <li class="tab"><a href="#snacks-e-geis">Snacks e Géis</a></li>
+                <li class="tab"><a href="#hipercaloricos">Hipercalóricos</a></li>
+                <li class="tab"><a href="#acessorios">Acessórios</a></li>
             </ul>
         </section>
-
-        <!-- DESTAQUES -->
-        <section class="featured-section" id="destaques">
-            <div class="section-header"><h3>DESTAQUES</h3></div>
+        <!-- PRODUTOS GERADOS -->
+        <section class="featured-section" id="proteinas" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>PROTEÍNAS</h3>
+            </div>
             <div class="product-grid">
-                <!-- 1 -->
-                <div class="product-card" data-id="p1" data-title="Whey Isolate Carbon" data-price="249.90" data-category="PROTEÍNAS">
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p1" data-price="172.90"
+                    data-title="WHEY GOLD ADAPTOGEN 900G - ORIGINAL">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="WHEY GOLD ADAPTOGEN 900G - ORIGINAL" src="img/products/p1.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
                         <span class="category">PROTEÍNAS</span>
-                        <h4 class="product-title">Whey Isolate Carbon</h4>
-                        <div class="product-bottom"><span class="price">R$ 249,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <h4 class="product-title">WHEY GOLD ADAPTOGEN 900G - ORIGINAL</h4>
+                        <div class="product-bottom"><span class="price">R$ 172,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <!-- 2 -->
-                <div class="product-card" data-id="p2" data-title="Creatina Pure 300g" data-price="99.90" data-category="CREATINA">
-                    <span class="badge badge-blue product-badge">MAIS VENDIDO</span>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p2" data-price="232.90"
+                    data-title="WHEY PROTEIN CONCENTRADO DUX 900G - CAPPUCCINO">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="WHEY PROTEIN CONCENTRADO DUX 900G - CAPPUCCINO"
+                            src="img/products/p2.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN CONCENTRADO DUX 900G - CAPPUCCINO</h4>
+                        <div class="product-bottom"><span class="price">R$ 232,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p3" data-price="232.90"
+                    data-title="WHEY PROTEIN CONCENTRADO DUX 900G - CHOCOLATE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY PROTEIN CONCENTRADO DUX 900G - CHOCOLATE"
+                            src="img/products/p3.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN CONCENTRADO DUX 900G - CHOCOLATE</h4>
+                        <div class="product-bottom"><span class="price">R$ 232,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p4" data-price="232.90"
+                    data-title="WHEY PROTEIN CONCENTRADO DUX 900G - CHOCOLATE BRANCO">
+                    <span class="badge badge-purple product-badge">Esgotado</span>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY PROTEIN CONCENTRADO DUX 900G - CHOCOLATE BRANCO"
+                            src="img/products/p4.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN CONCENTRADO DUX 900G - CHOCOLATE BRANCO</h4>
+                        <div class="product-bottom"><span class="price">R$ 232,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p5" data-price="232.90"
+                    data-title="WHEY PROTEIN CONCENTRADO DUX 900G - COOKIES">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY PROTEIN CONCENTRADO DUX 900G - COOKIES"
+                            src="img/products/p5.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN CONCENTRADO DUX 900G - COOKIES</h4>
+                        <div class="product-bottom"><span class="price">R$ 232,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p6" data-price="179.90"
+                    data-title="WHEY GOLD ADAPTOGEN 900G - CHOCOTELLA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY GOLD ADAPTOGEN 900G - CHOCOTELLA"
+                            src="img/products/p6.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY GOLD ADAPTOGEN 900G - CHOCOTELLA</h4>
+                        <div class="product-bottom"><span class="price">R$ 179,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p7" data-price="89.90"
+                    data-title="WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - BAUNILHA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - BAUNILHA"
+                            src="img/products/p7.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - BAUNILHA</h4>
+                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p8" data-price="89.90"
+                    data-title="WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - CHOCOLATE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - CHOCOLATE"
+                            src="img/products/p8.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - CHOCOLATE</h4>
+                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p9" data-price="89.90"
+                    data-title="WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - COOKIES">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - COOKIES"
+                            src="img/products/p9.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY PROTEIN NUTRI INTEGRAL MEDICA POTE 900G - COOKIES</h4>
+                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p10" data-price="172.90"
+                    data-title="WHEY GOLD ADAPTOGEN 900G - DULCE DE LECHE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY GOLD ADAPTOGEN 900G - DULCE DE LECHE"
+                            src="img/products/p10.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY GOLD ADAPTOGEN 900G - DULCE DE LECHE</h4>
+                        <div class="product-bottom"><span class="price">R$ 172,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p11" data-price="157.90"
+                    data-title="WHEY 100% MAX TITANIUM 900G POTE - CHOCOLATE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY 100% MAX TITANIUM 900G POTE - CHOCOLATE"
+                            src="img/products/p11.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY 100% MAX TITANIUM 900G POTE - CHOCOLATE</h4>
+                        <div class="product-bottom"><span class="price">R$ 157,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p12" data-price="149.90"
+                    data-title="WHEY 100% MAX TITANIUM 900G REFIL - COOKIES E CREAM">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="WHEY 100% MAX TITANIUM 900G REFIL - COOKIES E CREAM"
+                            src="img/products/p12.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">WHEY 100% MAX TITANIUM 900G REFIL - COOKIES E CREAM</h4>
+                        <div class="product-bottom"><span class="price">R$ 149,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p13" data-price="134.90"
+                    data-title="ISOLATE DEFINITION BODY ACTION 900G - BAUNILHA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="ISOLATE DEFINITION BODY ACTION 900G - BAUNILHA"
+                            src="img/products/p13.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">ISOLATE DEFINITION BODY ACTION 900G - BAUNILHA</h4>
+                        <div class="product-bottom"><span class="price">R$ 134,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p14" data-price="134.90"
+                    data-title="ISOLATE DEFINITION BODY ACTION 900G - CHOCOLATE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="ISOLATE DEFINITION BODY ACTION 900G - CHOCOLATE"
+                            src="img/products/p14.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">ISOLATE DEFINITION BODY ACTION 900G - CHOCOLATE</h4>
+                        <div class="product-bottom"><span class="price">R$ 134,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PROTEÍNAS" data-id="p15" data-price="134.90"
+                    data-title="ISOLATE DEFINITION BODY ACTION 900G - MORANGO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="ISOLATE DEFINITION BODY ACTION 900G - MORANGO"
+                            src="img/products/p15.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PROTEÍNAS</span>
+                        <h4 class="product-title">ISOLATE DEFINITION BODY ACTION 900G - MORANGO</h4>
+                        <div class="product-bottom"><span class="price">R$ 134,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="featured-section" id="pre-treinos" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>PRÉ-TREINOS</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="PRÉ-TREINOS" data-id="p16" data-price="59.90"
+                    data-title="PRE TREINO WORKOUT PANIC ADAPTOGEN 150G - LIMONADA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PRE TREINO WORKOUT PANIC ADAPTOGEN 150G - LIMONADA"
+                            src="img/products/p16.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span>
+                        <h4 class="product-title">PRE TREINO WORKOUT PANIC ADAPTOGEN 150G - LIMONADA</h4>
+                        <div class="product-bottom"><span class="price">R$ 59,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PRÉ-TREINOS" data-id="p17" data-price="59.90"
+                    data-title="PRE TREINO WORKOUT PANIC ADAPTOGEN 150G - MAÇA VERDE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PRE TREINO WORKOUT PANIC ADAPTOGEN 150G - MAÇA VERDE"
+                            src="img/products/p17.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span>
+                        <h4 class="product-title">PRE TREINO WORKOUT PANIC ADAPTOGEN 150G - MAÇA VERDE</h4>
+                        <div class="product-bottom"><span class="price">R$ 59,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PRÉ-TREINOS" data-id="p18" data-price="104.90"
+                    data-title="PRE TREINO WORKOUT PANIC ADAPTOGEN 300G - ABACAXI">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PRE TREINO WORKOUT PANIC ADAPTOGEN 300G - ABACAXI"
+                            src="img/products/p18.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span>
+                        <h4 class="product-title">PRE TREINO WORKOUT PANIC ADAPTOGEN 300G - ABACAXI</h4>
+                        <div class="product-bottom"><span class="price">R$ 104,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PRÉ-TREINOS" data-id="p19" data-price="119.90"
+                    data-title="PRE TREINO HORUS POTE 300G MAX TITANIUM - CITRUS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PRE TREINO HORUS POTE 300G MAX TITANIUM - CITRUS"
+                            src="img/products/p19.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span>
+                        <h4 class="product-title">PRE TREINO HORUS POTE 300G MAX TITANIUM - CITRUS</h4>
+                        <div class="product-bottom"><span class="price">R$ 119,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PRÉ-TREINOS" data-id="p20" data-price="119.90"
+                    data-title="PRE TREINO HORUS POTE 300G MAX TITANIUM - BLUE ICE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PRE TREINO HORUS POTE 300G MAX TITANIUM - BLUE ICE"
+                            src="img/products/p20.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span>
+                        <h4 class="product-title">PRE TREINO HORUS POTE 300G MAX TITANIUM - BLUE ICE</h4>
+                        <div class="product-bottom"><span class="price">R$ 119,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PRÉ-TREINOS" data-id="p21" data-price="104.90"
+                    data-title="PRE TREINO WORKOUT PANIC ADAPTOGEN 300G - MELANCIA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PRE TREINO WORKOUT PANIC ADAPTOGEN 300G - MELANCIA"
+                            src="img/products/p21.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PRÉ-TREINOS</span>
+                        <h4 class="product-title">PRE TREINO WORKOUT PANIC ADAPTOGEN 300G - MELANCIA</h4>
+                        <div class="product-bottom"><span class="price">R$ 104,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="featured-section" id="creatina" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>CREATINA</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="CREATINA" data-id="p22" data-price="69.90"
+                    data-title="CREATINA DARKNESS MONOHYDRATE INTEGRAL MEDICA 300G">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="CREATINA DARKNESS MONOHYDRATE INTEGRAL MEDICA 300G"
+                            src="img/products/p22.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
                         <span class="category">CREATINA</span>
-                        <h4 class="product-title">Creatina Pure 300g</h4>
-                        <div class="product-bottom"><span class="price">R$ 99,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <h4 class="product-title">CREATINA DARKNESS MONOHYDRATE INTEGRAL MEDICA 300G</h4>
+                        <div class="product-bottom"><span class="price">R$ 69,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <!-- 3 -->
-                <div class="product-card" data-id="p3" data-title="BCAA Recovery X" data-price="129.90" data-category="AMINOÁCIDOS">
+                <div class="product-card" data-category="CREATINA" data-id="p23" data-price="69.90"
+                    data-title="CREATINA MAX TITANIUM 300G">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="CREATINA MAX TITANIUM 300G" src="img/products/p23.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">AMINOÁCIDOS</span>
-                        <h4 class="product-title">BCAA Recovery X</h4>
-                        <div class="product-bottom"><span class="price">R$ 129,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">CREATINA</span>
+                        <h4 class="product-title">CREATINA MAX TITANIUM 300G</h4>
+                        <div class="product-bottom"><span class="price">R$ 69,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <!-- 4 -->
-                <div class="product-card" data-id="p4" data-title="Omega 3 Ultra" data-price="89.90" data-category="VITAMINAS">
+                <div class="product-card" data-category="CREATINA" data-id="p24" data-price="74.90"
+                    data-title="CREATINA MONOHIDRATADA DUX POTE 300G">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="CREATINA MONOHIDRATADA DUX POTE 300G"
+                            src="img/products/p24.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">VITAMINAS</span>
-                        <h4 class="product-title">Omega 3 Ultra</h4>
-                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">CREATINA</span>
+                        <h4 class="product-title">CREATINA MONOHIDRATADA DUX POTE 300G</h4>
+                        <div class="product-bottom"><span class="price">R$ 74,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- PROTEÍNAS -->
-        <section class="featured-section" id="proteinas" style="margin-top: 40px;">
-            <div class="section-header"><h3>PROTEÍNAS</h3></div>
+        <section class="featured-section" id="termogenicos" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>TERMOGÊNICOS</h3>
+            </div>
             <div class="product-grid">
-                <div class="product-card" data-id="p5" data-title="Whey Concentrado 100%" data-price="149.90" data-category="PROTEÍNAS">
+                <div class="product-card" data-category="TERMOGÊNICOS" data-id="p25" data-price="89.90"
+                    data-title="2HOT POTE 200G MAX TITANIUM - TANGERINA">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="2HOT POTE 200G MAX TITANIUM - TANGERINA"
+                            src="img/products/p25.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Whey Concentrado 100%</h4>
-                        <div class="product-bottom"><span class="price">R$ 149,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">TERMOGÊNICOS</span>
+                        <h4 class="product-title">2HOT POTE 200G MAX TITANIUM - TANGERINA</h4>
+                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <div class="product-card" data-id="p6" data-title="Whey Isolado Zero Lactose" data-price="299.90" data-category="PROTEÍNAS">
+                <div class="product-card" data-category="TERMOGÊNICOS" data-id="p26" data-price="49.90"
+                    data-title="THERMA PRO HARDCORE INTEGRAL MEDICA 60 CAPS">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="THERMA PRO HARDCORE INTEGRAL MEDICA 60 CAPS"
+                            src="img/products/p26.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Whey Isolado Zero Lactose</h4>
-                        <div class="product-bottom"><span class="price">R$ 299,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">TERMOGÊNICOS</span>
+                        <h4 class="product-title">THERMA PRO HARDCORE INTEGRAL MEDICA 60 CAPS</h4>
+                        <div class="product-bottom"><span class="price">R$ 49,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <div class="product-card" data-id="p7" data-title="Super Whey 3W Blend" data-price="179.90" data-category="PROTEÍNAS">
+                <div class="product-card" data-category="TERMOGÊNICOS" data-id="p27" data-price="74.90"
+                    data-title="CAFEINA DUX POTE 90 CAPS 67G">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="CAFEINA DUX POTE 90 CAPS 67G" src="img/products/p27.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Super Whey 3W Blend</h4>
-                        <div class="product-bottom"><span class="price">R$ 179,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
-                    </div>
-                </div>
-                <div class="product-card" data-id="p8" data-title="Beef Protein Hidrolisado" data-price="210.00" data-category="PROTEÍNAS">
-                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
-                    <div class="product-info">
-                        <span class="category">PROTEÍNAS</span><h4 class="product-title">Beef Protein Hidrolisado</h4>
-                        <div class="product-bottom"><span class="price">R$ 210,00</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">TERMOGÊNICOS</span>
+                        <h4 class="product-title">CAFEINA DUX POTE 90 CAPS 67G</h4>
+                        <div class="product-bottom"><span class="price">R$ 74,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- PRÉ-TREINOS -->
-        <section class="featured-section" id="pre-treinos" style="margin-top: 40px;">
-            <div class="section-header"><h3>PRÉ-TREINOS</h3></div>
+        <section class="featured-section" id="pastas-de-amendoim" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>PASTAS DE AMENDOIM</h3>
+            </div>
             <div class="product-grid">
-                <div class="product-card" data-id="p9" data-title="SuperCoffee Mental Focus" data-price="159.90" data-category="PRÉ-TREINOS">
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p28" data-price="67.90"
+                    data-title="PASTA DE AMENDOIM DR PEANUT 600G - AVELA">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM DR PEANUT 600G - AVELA"
+                            src="img/products/p28.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">PRÉ-TREINOS</span><h4 class="product-title">SuperCoffee Mental Focus</h4>
-                        <div class="product-bottom"><span class="price">R$ 159,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM DR PEANUT 600G - AVELA</h4>
+                        <div class="product-bottom"><span class="price">R$ 67,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <div class="product-card" data-id="h1" data-title="Pré-treino Elite Xtreme" data-price="189.90" data-category="PRÉ-TREINOS">
-                    <span class="badge badge-purple product-badge">NOVO</span>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p29" data-price="67.90"
+                    data-title="PASTA DE AMENDOIM DR PEANUT 600G - BOMBOM ITALIANO">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM DR PEANUT 600G - BOMBOM ITALIANO"
+                            src="img/products/p29.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">PRÉ-TREINOS</span><h4 class="product-title">Elite Xtreme Pro</h4>
-                        <div class="product-bottom"><span class="price">R$ 189,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM DR PEANUT 600G - BOMBOM ITALIANO</h4>
+                        <div class="product-bottom"><span class="price">R$ 67,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <div class="product-card" data-id="p10" data-title="Nuclear Rush" data-price="89.90" data-category="PRÉ-TREINOS">
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p30" data-price="67.90"
+                    data-title="PASTA DE AMENDOIM DR PEANUT 600G - COOKIES E CREAM">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM DR PEANUT 600G - COOKIES E CREAM"
+                            src="img/products/p30.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">PRÉ-TREINOS</span><h4 class="product-title">Nuclear Rush</h4>
-                        <div class="product-bottom"><span class="price">R$ 89,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM DR PEANUT 600G - COOKIES E CREAM</h4>
+                        <div class="product-bottom"><span class="price">R$ 67,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p31" data-price="67.90"
+                    data-title="PASTA DE AMENDOIM DR PEANUT 600G - DOCE DE LEITE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM DR PEANUT 600G - DOCE DE LEITE"
+                            src="img/products/p31.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM DR PEANUT 600G - DOCE DE LEITE</h4>
+                        <div class="product-bottom"><span class="price">R$ 67,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p32" data-price="59.90"
+                    data-title="PASTA DE AMENDOIM 450G LA GANEXA - MOUSSE BRIGADEIRO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM 450G LA GANEXA - MOUSSE BRIGADEIRO"
+                            src="img/products/p32.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM 450G LA GANEXA - MOUSSE BRIGADEIRO</h4>
+                        <div class="product-bottom"><span class="price">R$ 59,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p33" data-price="59.90"
+                    data-title="PASTA DE AMENDOIM 450G LA GANEXA - PISTACHE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM 450G LA GANEXA - PISTACHE"
+                            src="img/products/p33.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM 450G LA GANEXA - PISTACHE</h4>
+                        <div class="product-bottom"><span class="price">R$ 59,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p34" data-price="59.90"
+                    data-title="PASTA DE AMENDOIM 450G LA GANEXA - CARAMELO E FLOR DE SAL">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM 450G LA GANEXA - CARAMELO E FLOR DE SAL"
+                            src="img/products/p34.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM 450G LA GANEXA - CARAMELO E FLOR DE SAL</h4>
+                        <div class="product-bottom"><span class="price">R$ 59,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p35" data-price="44.90"
+                    data-title="PASTA DE AMENDOIM 450G LA GANEXA - CHOCOLATE CROCANTE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM 450G LA GANEXA - CHOCOLATE CROCANTE"
+                            src="img/products/p35.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM 450G LA GANEXA - CHOCOLATE CROCANTE</h4>
+                        <div class="product-bottom"><span class="price">R$ 44,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p36" data-price="44.90"
+                    data-title="PASTA DE AMENDOIM 450G LA GANEXA - LEITINHO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM 450G LA GANEXA - LEITINHO</h4>
+                        <div class="product-bottom"><span class="price">R$ 44,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="PASTAS DE AMENDOIM" data-id="p37" data-price="67.90"
+                    data-title="PASTA DE AMENDOIM DR PEANUT 600G - BROWNIE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="PASTA DE AMENDOIM DR PEANUT 600G - BROWNIE"
+                            src="img/products/p37.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">PASTAS DE AMENDOIM</span>
+                        <h4 class="product-title">PASTA DE AMENDOIM DR PEANUT 600G - BROWNIE</h4>
+                        <div class="product-bottom"><span class="price">R$ 67,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- COMBOS PROMOCIONAIS -->
-        <section class="featured-section" id="combos" style="margin-top: 40px;">
-            <div class="section-header"><h3>COMBOS PROMOCIONAIS</h3></div>
+        <section class="featured-section" id="snacks-e-geis" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>SNACKS E GÉIS</h3>
+            </div>
             <div class="product-grid">
-                <div class="product-card" data-id="c1" data-title="Combo Força: Whey + Creatina" data-price="319.90" data-category="COMBOS">
-                    <span class="badge badge-blue product-badge">OFERTA</span>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p38" data-price="9.90"
+                    data-title="BARRA WHEY GREGO NUTRATA 40G C/12 - HAVANNA DULCE DE LECHE BANOFFEE">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image"><img
+                            alt="BARRA WHEY GREGO NUTRATA 40G C/12 - HAVANNA DULCE DE LECHE BANOFFEE"
+                            src="img/products/p38.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
                     <div class="product-info">
-                        <span class="category">COMBOS</span><h4 class="product-title">Combo Força: Whey + Creatina</h4>
-                        <div class="product-bottom"><span class="price">R$ 319,90</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA WHEY GREGO NUTRATA 40G C/12 - HAVANNA DULCE DE LECHE BANOFFEE
+                        </h4>
+                        <div class="product-bottom"><span class="price">R$ 9,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
-                <div class="product-card" data-id="c2" data-title="Combo Emagrecimento Extremo" data-price="210.00" data-category="COMBOS">
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p39" data-price="14.90"
+                    data-title="BARRA PROTOBAR 70G C/9 NUTRATA - BROWNIE CHOCOLAT COM DOCE DE LEITE">
                     <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-                    <div class="product-image"><div class="image-placeholder"><i class="fa-solid fa-capsules"></i></div></div>
+                    <div class="product-image">
+                        <div class="image-placeholder"><i class="fa-solid fa-cookie-bite"></i></div>
+                    </div>
                     <div class="product-info">
-                        <span class="category">COMBOS</span><h4 class="product-title">Combo Emagrecimento Extremo</h4>
-                        <div class="product-bottom"><span class="price">R$ 210,00</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA PROTOBAR 70G C/9 NUTRATA - BROWNIE CHOCOLAT COM DOCE DE LEITE
+                        </h4>
+                        <div class="product-bottom"><span class="price">R$ 14,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p40" data-price="14.90"
+                    data-title="BARRA PROTOBAR 70G C/9 NUTRATA - DOCE DE LEITE LEGITIMO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA PROTOBAR 70G C/9 NUTRATA - DOCE DE LEITE LEGITIMO"
+                            src="img/products/p40.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA PROTOBAR 70G C/9 NUTRATA - DOCE DE LEITE LEGITIMO</h4>
+                        <div class="product-bottom"><span class="price">R$ 14,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p41" data-price="10.90"
+                    data-title="BARRA CRISP INTEGRAL MEDICA 45G C/12 - PEANUT BUTTER">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA CRISP INTEGRAL MEDICA 45G C/12 - PEANUT BUTTER"
+                            src="img/products/p41.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA CRISP INTEGRAL MEDICA 45G C/12 - PEANUT BUTTER</h4>
+                        <div class="product-bottom"><span class="price">R$ 10,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p42" data-price="2.90"
+                    data-title="GO RECOVERY GEL 30G ATLHETICA DISPLAY C/10 UNIDADES - MORANGO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="GO RECOVERY GEL 30G ATLHETICA DISPLAY C/10 UNIDADES - MORANGO"
+                            src="img/products/p42.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">GO RECOVERY GEL 30G ATLHETICA DISPLAY C/10 UNIDADES - MORANGO</h4>
+                        <div class="product-bottom"><span class="price">R$ 2,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p43" data-price="3.90"
+                    data-title="GO! ENERGY NOW GEL 30G ATLHETICA DISPLAY C/10 UNIDADES - LARANJA COM ACEROLA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img
+                            alt="GO! ENERGY NOW GEL 30G ATLHETICA DISPLAY C/10 UNIDADES - LARANJA COM ACEROLA"
+                            src="img/products/p43.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">GO! ENERGY NOW GEL 30G ATLHETICA DISPLAY C/10 UNIDADES - LARANJA COM
+                            ACEROLA</h4>
+                        <div class="product-bottom"><span class="price">R$ 3,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p44" data-price="10.90"
+                    data-title="BARRA CRISP INTEGRAL MEDICA 45G C/12 - COOKIES AND CREAM">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA CRISP INTEGRAL MEDICA 45G C/12 - COOKIES AND CREAM"
+                            src="img/products/p44.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA CRISP INTEGRAL MEDICA 45G C/12 - COOKIES AND CREAM</h4>
+                        <div class="product-bottom"><span class="price">R$ 10,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p45" data-price="10.90"
+                    data-title="BARRA CRISP INTEGRAL MEDICA 45G C/12 - DUO CRUNCH">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA CRISP INTEGRAL MEDICA 45G C/12 - DUO CRUNCH"
+                            src="img/products/p45.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA CRISP INTEGRAL MEDICA 45G C/12 - DUO CRUNCH</h4>
+                        <div class="product-bottom"><span class="price">R$ 10,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p46" data-price="3.90"
+                    data-title="ENERGEL BLACK 30G SACHE BODY ACTION C/10 - UVA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="ENERGEL BLACK 30G SACHE BODY ACTION C/10 - UVA"
+                            src="img/products/p46.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">ENERGEL BLACK 30G SACHE BODY ACTION C/10 - UVA</h4>
+                        <div class="product-bottom"><span class="price">R$ 3,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p47" data-price="10.90"
+                    data-title="BARRA CRISP INTEGRAL MEDICA 45G C/12 - CREME DE COCO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA CRISP INTEGRAL MEDICA 45G C/12 - CREME DE COCO"
+                            src="img/products/p47.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA CRISP INTEGRAL MEDICA 45G C/12 - CREME DE COCO</h4>
+                        <div class="product-bottom"><span class="price">R$ 10,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p48" data-price="10.90"
+                    data-title="BARRA CRISP INTEGRAL MEDICA 45G C/12 - BROWNIE DE CHOCOLATE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA CRISP INTEGRAL MEDICA 45G C/12 - BROWNIE DE CHOCOLATE"
+                            src="img/products/p48.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA CRISP INTEGRAL MEDICA 45G C/12 - BROWNIE DE CHOCOLATE</h4>
+                        <div class="product-bottom"><span class="price">R$ 10,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p49" data-price="3.90"
+                    data-title="ENERGEL BLACK 30G SACHE BODY ACTION C/10 - FRUTAS VERMELHAS">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="ENERGEL BLACK 30G SACHE BODY ACTION C/10 - FRUTAS VERMELHAS"
+                            src="img/products/p49.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">ENERGEL BLACK 30G SACHE BODY ACTION C/10 - FRUTAS VERMELHAS</h4>
+                        <div class="product-bottom"><span class="price">R$ 3,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p50" data-price="9.90"
+                    data-title="BARRA WHEY GREGO NUTRATA 40G C/12 - BEIJINHO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA WHEY GREGO NUTRATA 40G C/12 - BEIJINHO"
+                            src="img/products/p50.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA WHEY GREGO NUTRATA 40G C/12 - BEIJINHO</h4>
+                        <div class="product-bottom"><span class="price">R$ 9,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p51" data-price="9.90"
+                    data-title="BARRA WHEY GREGO NUTRATA 40G C/12 - BRIGADEIRO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA WHEY GREGO NUTRATA 40G C/12 - BRIGADEIRO"
+                            src="img/products/p51.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA WHEY GREGO NUTRATA 40G C/12 - BRIGADEIRO</h4>
+                        <div class="product-bottom"><span class="price">R$ 9,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p52" data-price="9.90"
+                    data-title="BARRA WHEY GREGO NUTRATA 40G C/12 - MORANGO CHANTIL">
+                    <span class="badge badge-purple product-badge">Esgotado</span>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="BARRA WHEY GREGO NUTRATA 40G C/12 - MORANGO CHANTIL"
+                            src="img/products/p52.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">BARRA WHEY GREGO NUTRATA 40G C/12 - MORANGO CHANTIL</h4>
+                        <div class="product-bottom"><span class="price">R$ 9,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="SNACKS E GÉIS" data-id="p53" data-price="3.90"
+                    data-title="ENERGEL BLACK 30G SACHE BODY ACTION C/10 - MORANGO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="ENERGEL BLACK 30G SACHE BODY ACTION C/10 - MORANGO"
+                            src="img/products/p53.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">SNACKS E GÉIS</span>
+                        <h4 class="product-title">ENERGEL BLACK 30G SACHE BODY ACTION C/10 - MORANGO</h4>
+                        <div class="product-bottom"><span class="price">R$ 3,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <section class="featured-section" id="hipercaloricos" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>HIPERCALÓRICOS</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="HIPERCALÓRICOS" data-id="p54" data-price="119.90"
+                    data-title="HIPERCALORICO MAX TITANIUM 3 KG REFIL - BAUNILHA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="HIPERCALORICO MAX TITANIUM 3 KG REFIL - BAUNILHA"
+                            src="img/products/p54.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">HIPERCALÓRICOS</span>
+                        <h4 class="product-title">HIPERCALORICO MAX TITANIUM 3 KG REFIL - BAUNILHA</h4>
+                        <div class="product-bottom"><span class="price">R$ 119,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="HIPERCALÓRICOS" data-id="p55" data-price="119.90"
+                    data-title="HIPERCALORICO MAX TITANIUM 3 KG REFIL - CHOCOLATE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="HIPERCALORICO MAX TITANIUM 3 KG REFIL - CHOCOLATE"
+                            src="img/products/p55.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">HIPERCALÓRICOS</span>
+                        <h4 class="product-title">HIPERCALORICO MAX TITANIUM 3 KG REFIL - CHOCOLATE</h4>
+                        <div class="product-bottom"><span class="price">R$ 119,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="HIPERCALÓRICOS" data-id="p56" data-price="119.90"
+                    data-title="HIPERCALORICO MAX TITANIUM 3 KG REFIL - MORANGO">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="HIPERCALORICO MAX TITANIUM 3 KG REFIL - MORANGO"
+                            src="img/products/p56.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">HIPERCALÓRICOS</span>
+                        <h4 class="product-title">HIPERCALORICO MAX TITANIUM 3 KG REFIL - MORANGO</h4>
+                        <div class="product-bottom"><span class="price">R$ 119,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="featured-section" id="acessorios" style="margin-top: 40px;">
+            <div class="section-header">
+                <h3>ACESSÓRIOS</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="ACESSÓRIOS" data-id="p57" data-price="17.90"
+                    data-title="COQUETELEIRA SHAKER BODY ACTION 600 ML ROSA">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="COQUETELEIRA SHAKER BODY ACTION 600 ML ROSA"
+                            src="img/products/p57.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">ACESSÓRIOS</span>
+                        <h4 class="product-title">COQUETELEIRA SHAKER BODY ACTION 600 ML ROSA</h4>
+                        <div class="product-bottom"><span class="price">R$ 17,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ACESSÓRIOS" data-id="p58" data-price="44.90"
+                    data-title="COQUETELEIRA TERMICA CAMPEOES MAX TITANIUM 700 ML">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="COQUETELEIRA TERMICA CAMPEOES MAX TITANIUM 700 ML"
+                            src="img/products/p58.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">ACESSÓRIOS</span>
+                        <h4 class="product-title">COQUETELEIRA TERMICA CAMPEOES MAX TITANIUM 700 ML</h4>
+                        <div class="product-bottom"><span class="price">R$ 44,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ACESSÓRIOS" data-id="p59" data-price="17.90"
+                    data-title="COQUETELEIRA AZUL BODY ACTION NUTRI SCIENCE">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="COQUETELEIRA AZUL BODY ACTION NUTRI SCIENCE"
+                            src="img/products/p59.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">ACESSÓRIOS</span>
+                        <h4 class="product-title">COQUETELEIRA AZUL BODY ACTION NUTRI SCIENCE</h4>
+                        <div class="product-bottom"><span class="price">R$ 17,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ACESSÓRIOS" data-id="p60" data-price="17.90"
+                    data-title="COQUETELEIRA ROXA COLAGENO BODY ACTION">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="COQUETELEIRA ROXA COLAGENO BODY ACTION"
+                            src="img/products/p60.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">ACESSÓRIOS</span>
+                        <h4 class="product-title">COQUETELEIRA ROXA COLAGENO BODY ACTION</h4>
+                        <div class="product-bottom"><span class="price">R$ 17,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ACESSÓRIOS" data-id="p61" data-price="17.90"
+                    data-title="COQUETELEIRA CRISTAL ALL DAY 400 ML MAX TITANIUM">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image"><img alt="COQUETELEIRA CRISTAL ALL DAY 400 ML MAX TITANIUM"
+                            src="img/products/p61.jpg"
+                            style="width: 100%; height: 100%; object-fit: contain;  border-radius: 8px;" /></div>
+                    <div class="product-info">
+                        <span class="category">ACESSÓRIOS</span>
+                        <h4 class="product-title">COQUETELEIRA CRISTAL ALL DAY 400 ML MAX TITANIUM</h4>
+                        <div class="product-bottom"><span class="price">R$ 17,90</span><button class="add-btn"><i
+                                    class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
     <!-- Camada Externa Translúcida Fundo Escuro para Modal do Carrinho/Wish -->
     <div class="overlay" id="globalOverlay"></div>
-
     <!-- Barra do Carrinho Inteligente Completo -->
     <aside class="sidebar" id="cartSidebar">
         <div class="sidebar-header">
@@ -269,7 +977,6 @@
             </button>
         </div>
     </aside>
-
     <!-- Barra Lateral de Desejos Exibindo -->
     <aside class="sidebar" id="wishlistSidebar">
         <div class="sidebar-header">
@@ -280,13 +987,14 @@
             <!-- Listagens de Desejos (itens com coraçaozinho ativo) virão injetados aqui -->
         </div>
     </aside>
-
     <!-- Premium Footer -->
     <footer class="app-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="Logo.png" alt="Logo" style="height: 48px; width: auto; object-fit: contain; margin-bottom: 12px;">
-                <p>O melhor catálogo de suplementos para potencializar os seus treinos. Elevando sua performance todos os dias.</p>
+                <img alt="Logo" src="Logo.png"
+                    style="height: 48px; width: auto; object-fit: contain; margin-bottom: 12px;" />
+                <p>O melhor catálogo de suplementos para potencializar os seus treinos. Elevando sua performance todos
+                    os dias.</p>
             </div>
             <div class="footer-links">
                 <h4>Contato</h4>
@@ -295,20 +1003,21 @@
             </div>
             <div class="footer-location">
                 <h4>Localização</h4>
-                <p><i class="fa-solid fa-location-dot"></i> Av. José Marão filho 5330.<br>Polo comercial e industrial de votuporanga.<br>15502-045. Votuporanga. SP</p>
+                <p><i class="fa-solid fa-location-dot"></i> Av. José Marão filho 5330.<br />Polo comercial e industrial
+                    de votuporanga.<br />15502-045. Votuporanga. SP</p>
             </div>
             <div class="footer-legal">
                 <h4>Legal</h4>
                 <p>CNPJ: 11.111.111/0001-11</p>
-                <p>&copy; 2026 Nome Suplementos.<br>Todos os direitos reservados.</p>
+                <p>© 2026 Nome Suplementos.<br />Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
-
     <!-- Botão Oficial Físico Solto Do WhatsApp Para Flutuar no Canto -->
-    <a href="https://wa.me/5517996821533?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20sua%20marca." target="_blank" class="floating-whatsapp">
+    <a class="floating-whatsapp"
+        href="https://wa.me/5517996821533?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20sua%20marca."
+        target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 </body>
