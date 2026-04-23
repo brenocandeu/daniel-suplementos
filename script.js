@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message += `\n*TOTAL: ${formatPrice(total)}*\n\nComo podemos prosseguir com o pagamento e a entrega?`;
         
         // Empacotador para transformar a URL perfeitamente válida e não quebrar textos num numero especifico
-        const whatsappNumber = "5517997338505";
+        const whatsappNumber = "5517996821533";
         const encodedUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         
         window.open(encodedUrl, '_blank');
