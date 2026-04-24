@@ -249,34 +249,167 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(encodedUrl, '_blank');
     });
 
-    // Dinâmica de Rolagem e Carrossel Automático Inical
+    // Dinâmica de Rolagem e Carrossel Automático Inicial (com Arraste)
     const track = document.getElementById('heroCarousel');
     const slides = document.querySelectorAll('.hero-card');
     const dots = document.querySelectorAll('.hero-pagination .dot');
     let currentIndex = 0;
+    
+    // Variáveis do Drag (Arrastar)
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
 
     const updateCarousel = (index) => {
-        track.style.transform = `translateX(-${index * 100}%)`;
+        currentTranslate = index * -100;
+        prevTranslate = currentTranslate;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        track.style.transform = `translateX(${currentTranslate}%)`;
         dots.forEach(d => d.classList.remove('active'));
         if(dots[index]) dots[index].classList.add('active');
     };
 
+    const getPositionX = (e) => {
+        return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    };
+
+    const touchStart = (index) => {
+        return (e) => {
+            isDragging = true;
+            startPos = getPositionX(e);
+            animationID = requestAnimationFrame(animation);
+            track.style.transition = 'none';
+            track.style.cursor = 'grabbing';
+            clearInterval(carouselInterval);
+        };
+    };
+
+    const touchMove = (e) => {
+        if(isDragging) {
+            const currentPosition = getPositionX(e);
+            const diff = currentPosition - startPos;
+            const diffPercent = (diff / track.offsetWidth) * 100;
+            currentTranslate = prevTranslate + diffPercent;
+        }
+    };
+
+    const touchEnd = () => {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        track.style.cursor = 'grab';
+
+        const movedBy = currentTranslate - prevTranslate;
+
+        if (movedBy < -15 && currentIndex < slides.length - 1) currentIndex += 1;
+        else if (movedBy > 15 && currentIndex > 0) currentIndex -= 1;
+
+        updateCarousel(currentIndex);
+        startAutoSlide();
+    };
+
+    const animation = () => {
+        track.style.transform = `translateX(${currentTranslate}%)`;
+        if (isDragging) requestAnimationFrame(animation);
+    };
+
+    let carouselInterval;
+    const startAutoSlide = () => {
+        if(slides.length > 1) {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel(currentIndex);
+            }, 5000);
+        }
+    };
+
     if(slides.length > 1) {
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel(currentIndex);
-        }, 5000);
+        track.style.cursor = 'grab';
+        startAutoSlide();
+
+        // Eventos de Toque e Mouse
+        track.addEventListener('mousedown', touchStart(currentIndex));
+        track.addEventListener('mousemove', touchMove);
+        track.addEventListener('mouseup', touchEnd);
+        track.addEventListener('mouseleave', () => { if(isDragging) touchEnd() });
+        
+        track.addEventListener('touchstart', touchStart(currentIndex), {passive: true});
+        track.addEventListener('touchmove', touchMove, {passive: true});
+        track.addEventListener('touchend', touchEnd);
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentIndex = index;
                 updateCarousel(currentIndex);
+                startAutoSlide();
             });
+        });
+        
+        // Evitar drag em elementos filhos soltos pra não bugar o cursor
+        const disableDrag = e => e.preventDefault();
+        track.querySelectorAll('img, a, h2, p, button, span').forEach(el => {
+            el.addEventListener('dragstart', disableDrag);
         });
     }
 
     // Inicialização Primordial
     updateBadges();
+
+    // Lógica de Busca Responsiva do Cabeçalho
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    let searchActive = false;
+
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', () => {
+            searchActive = !searchActive;
+            if(searchActive) {
+                searchInput.style.width = '160px';
+                searchInput.style.padding = '6px 12px';
+                searchInput.style.opacity = '1';
+                searchInput.style.marginRight = '8px';
+                searchInput.style.border = '1px solid var(--primary-neon)';
+                searchInput.focus();
+            } else {
+                searchInput.style.width = '0';
+                searchInput.style.padding = '0';
+                searchInput.style.opacity = '0';
+                searchInput.style.marginRight = '0';
+                searchInput.style.border = '1px solid transparent';
+                searchInput.value = '';
+                filterProducts('');
+            }
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            filterProducts(e.target.value.toLowerCase().trim());
+        });
+    }
+
+    const filterProducts = (term) => {
+        productCards.forEach(card => {
+            const title = card.getAttribute('data-title').toLowerCase();
+            const category = card.getAttribute('data-category').toLowerCase();
+            if(title.includes(term) || category.includes(term)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Esconder / Exibir a seção dependendo de haver cards visíveis
+        document.querySelectorAll('.featured-section').forEach(section => {
+            const cards = section.querySelectorAll('.product-card');
+            const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
+            if(visibleCards.length === 0 && term !== '') {
+                section.style.display = 'none';
+            } else {
+                section.style.display = 'block';
+            }
+        });
+    };
 
     // Lógica das animações das categorias soltas da página (Smooth Scroll)
     const categoryTabsLinks = document.querySelectorAll('.category-tabs a');
