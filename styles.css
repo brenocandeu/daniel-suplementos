@@ -274,7 +274,7 @@ body {
 
 /* Categorias */
 .categories-section {
-    padding: 0 0 32px 0;
+    padding: 0 0 0 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
