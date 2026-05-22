@@ -1,5 +1,6 @@
 
-const URL_PLANILHA_GOOGLE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTibd8M4e-dkKMJ6dgjFA2evf4apbmZHarsllMp5qoh6eEVjxfBJGO1mtrdyGdjCTyNARE7l2y_NALa/pub?output=csv';
+const URL_PLANILHA_GOOGLE = 'https://docs.google.com/spreadsheets/d/1_2seF1dVT9-cApNsHnsd54M1fj6qiw6f5ZMR7wClh4A/gviz/tq?tqx=out:csv';
+
 
 const PRODUTOS_DB = [
   {
