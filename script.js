@@ -957,7 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SISTEMA DE ESTOQUE GOOGLE SHEETS E RENDERIZAÇÃO
     function parseCSV(csvText) {
         const lines = csvText.split('\n').filter(l => l.trim() !== '');
-        const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+        const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim().toLowerCase());
         const idIndex = headers.indexOf('id');
         const estoqueIndex = headers.indexOf('estoque');
         
