@@ -397,18 +397,18 @@ const PRODUTOS_DB = [
   {
     "id": "p44",
     "category": "SNACKS E GÉIS",
-    "priceNum": "10.90",
+    "priceNum": "12.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - COOKIES AND CREAM",
     "image": "img/products/p44.jpg",
-    "priceText": "R$ 10,90"
+    "priceText": "R$ 12,90"
   },
   {
     "id": "p45",
     "category": "SNACKS E GÉIS",
-    "priceNum": "10.90",
+    "priceNum": "12.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - DUO CRUNCH",
     "image": "img/products/p45.jpg",
-    "priceText": "R$ 10,90"
+    "priceText": "R$ 12,90"
   },
   {
     "id": "p46",
@@ -421,18 +421,18 @@ const PRODUTOS_DB = [
   {
     "id": "p47",
     "category": "SNACKS E GÉIS",
-    "priceNum": "10.90",
+    "priceNum": "12.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - CREME DE COCO",
     "image": "img/products/p47.jpg",
-    "priceText": "R$ 10,90"
+    "priceText": "R$ 12,90"
   },
   {
     "id": "p48",
     "category": "SNACKS E GÉIS",
-    "priceNum": "10.90",
+    "priceNum": "12.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - BROWNIE DE CHOCOLATE",
     "image": "img/products/p48.jpg",
-    "priceText": "R$ 10,90"
+    "priceText": "R$ 12,90"
   },
   {
     "id": "p49",
@@ -569,6 +569,190 @@ const PRODUTOS_DB = [
     "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: MARACUJÁ C/ MORANGO",
     "image": "img/products/p65.jpg",
     "priceText": "R$ 6,90"
+  },
+  {
+    "id": "p66",
+    "category": "VITAMINAS",
+    "priceNum": "47.90",
+    "title": "MELATONINA 30 ML OCEAN DROP",
+    "image": "img/products/p66.jpg",
+    "priceText": "R$ 47,90"
+  },
+  {
+    "id": "p67",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "29.90",
+    "title": "THERMO FLAME 60 CAPS BLACK SKULL",
+    "image": "img/products/p67.jpg",
+    "priceText": "R$ 29,90"
+  },
+  {
+    "id": "p68",
+    "category": "VITAMINAS",
+    "priceNum": "34.90",
+    "title": "TREONATO SUPRA 60 CAPS 421 MG HERBAMED",
+    "image": "img/products/p68.jpg",
+    "priceText": "R$ 34,90"
+  },
+  {
+    "id": "p69",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "41.90",
+    "title": "CAFEINA HERBAMED 60CAPS 200MG",
+    "image": "img/products/p69.jpg",
+    "priceText": "R$ 41,90"
+  },
+  {
+    "id": "p70",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "38.90",
+    "title": "CAFEINA 200 MG 60 CAPSULAS BODY ACTION",
+    "image": "img/products/p70.jpg",
+    "priceText": "R$ 38,90"
+  },
+  {
+    "id": "p71",
+    "category": "VITAMINAS",
+    "priceNum": "44.90",
+    "title": "OMEGA 3 HERBAMED 60CAPS 1000MG",
+    "image": "img/products/p71.jpg",
+    "priceText": "R$ 44,90"
+  },
+  {
+    "id": "p72",
+    "category": "SNACKS E GÉIS",
+    "priceNum": "12.90",
+    "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - OVOMALTINE",
+    "image": "img/products/p72.jpg",
+    "priceText": "R$ 12,90"
+  },
+  {
+    "id": "p73",
+    "category": "VITAMINAS",
+    "priceNum": "29.90",
+    "title": "VITAMINA C HERBAMED 60 CAPS",
+    "image": "img/products/p73.jpg",
+    "priceText": "R$ 29,90"
+  },
+  {
+    "id": "p74",
+    "category": "VITAMINAS",
+    "priceNum": "19.90",
+    "title": "VITAMINA D3 HERBAMED 60 CAPS",
+    "image": "img/products/p74.jpg",
+    "priceText": "R$ 19,90"
+  },
+  {
+    "id": "p75",
+    "category": "ACESSÓRIOS",
+    "priceNum": "37.90",
+    "title": "BALANÇA DIGITAL INTEGRAL MEDICA",
+    "image": "img/products/p75.jpg",
+    "priceText": "R$ 37,90"
+  },
+  {
+    "id": "p76",
+    "category": "PRÉ-TREINOS",
+    "priceNum": "4.90",
+    "title": "PRE TREINO NUCLEAR RUSH EM GEL 25G CAIXA C/ 10UN BODY ACTION - FRUTAS VERMELHAS",
+    "image": "img/products/p76.jpg",
+    "priceText": "R$ 4,90"
+  },
+  {
+    "id": "p77",
+    "category": "PRÉ-TREINOS",
+    "priceNum": "4.90",
+    "title": "PRE TREINO NUCLEAR RUSH EM GEL 25G CAIXA C/ 10UN BODY ACTION - GUARANÁ",
+    "image": "img/products/p77.jpg",
+    "priceText": "R$ 4,90"
+  },
+  {
+    "id": "p78",
+    "category": "PRÉ-TREINOS",
+    "priceNum": "69.90",
+    "title": "PRE-NIGHT 200G - BODY ACTION - GUARANÁ COM AÇAÍ",
+    "image": "img/products/p78.jpg",
+    "priceText": "R$ 69,90"
+  },
+  {
+    "id": "p79",
+    "category": "VITAMINAS",
+    "priceNum": "23.90",
+    "title": "MELATONINA SUPRA 60CAPS HERBAMED",
+    "image": "img/products/p79.jpg",
+    "priceText": "R$ 23,90"
+  },
+  {
+    "id": "p80",
+    "category": "PROTEÍNAS",
+    "priceNum": "99.90",
+    "title": "PROTEINA EM PÓ UEVO NATUROVOS 1KG - MORANGO",
+    "image": "img/products/p80.png",
+    "priceText": "R$ 99,90"
+  },
+  {
+    "id": "p81",
+    "category": "SNACKS E GÉIS",
+    "priceNum": "14.90",
+    "title": "BARRA CHARGE PROTEIN NESTLÉ 12U - NUTRATA",
+    "image": "img/products/p81.jpg",
+    "priceText": "R$ 14,90"
+  },
+  {
+    "id": "p82",
+    "category": "PROTEÍNAS",
+    "priceNum": "149.90",
+    "title": "100% WHEY DOUBLE TASTY POTE 900G MAX TITANIUM - MORANGO",
+    "image": "img/products/p82.jpg",
+    "priceText": "R$ 149,90"
+  },
+  {
+    "id": "p83",
+    "category": "PROTEÍNAS",
+    "priceNum": "149.90",
+    "title": "100% WHEY DOUBLE TASTY POTE 900G MAX TITANIUM - BAUNILHA",
+    "image": "img/products/p83.jpg",
+    "priceText": "R$ 149,90"
+  },
+  {
+    "id": "p84",
+    "category": "PROTEÍNAS",
+    "priceNum": "194.90",
+    "title": "CARNIBOL DARKNESS 900G - BLUEBERRY",
+    "image": "img/products/p84.jpg",
+    "priceText": "R$ 194,90"
+  },
+  {
+    "id": "p85",
+    "category": "PROTEÍNAS",
+    "priceNum": "194.90",
+    "title": "BEEF PROTEIN 900G - INTEGRAL MEDICA - FRUTAS VERMELHAS",
+    "image": "img/products/p85.png",
+    "priceText": "R$ 194,90"
+  },
+  {
+    "id": "p86",
+    "category": "SNACKS E GÉIS",
+    "priceNum": "14.90",
+    "title": "BARRA DARK CHARGE PROTEIN NESTLÉ 12U - NUTRATA",
+    "image": "img/products/p86.jpg",
+    "priceText": "R$ 14,90"
+  },
+  {
+    "id": "p87",
+    "category": "SNACKS E GÉIS",
+    "priceNum": "3.90",
+    "title": "ENERGEL BLACK 30G SACHE BODY ACTION C/10 - GUARANA COM ACAI",
+    "image": "img/products/p87.jpg",
+    "priceText": "R$ 3,90"
+  },
+  {
+    "id": "p88",
+    "category": "SNACKS E GÉIS",
+    "priceNum": "9.90",
+    "title": "BARRA WHEY GREGO NUTRATA 40G C/12 - HAVANNA DULCE DE LECHE LEGITIMO",
+    "image": "img/products/p88.jpg",
+    "priceText": "R$ 9,90"
   }
 ];
 
