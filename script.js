@@ -5,7 +5,7 @@ const PRODUTOS_DB = [
   {
     "id": "v01",
     "category": "LINHA OFICIAL",
-    "priceNum": "89.90",
+    "priceNum": "149.90",
     "title": "RESVERATROL TRANS VINIE 165mg - 60 CÁPSULAS",
     "image": "img/products/v01.png",
     "priceText": "R$ 149,90"
@@ -13,15 +13,15 @@ const PRODUTOS_DB = [
   {
     "id": "v02",
     "category": "LINHA OFICIAL",
-    "priceNum": "99.90",
+    "priceNum": "69.90",
     "title": "CREATINA FATOR X VINIE 100% PURA - 300G",
     "image": "img/products/v02.png",
-    "priceText": "R$ 79,90"
+    "priceText": "R$ 69,90"
   },
   {
     "id": "v03",
     "category": "LINHA OFICIAL",
-    "priceNum": "109.90",
+    "priceNum": "89.90",
     "title": "CREATINA FATOR X VINIE SABOR UVA + RESVERATROL - 300G",
     "image": "img/products/v03.png",
     "priceText": "R$ 89,90"
@@ -29,7 +29,7 @@ const PRODUTOS_DB = [
   {
     "id": "v04",
     "category": "LINHA OFICIAL",
-    "priceNum": "119.90",
+    "priceNum": "139.90",
     "title": "COLÁGENO HIDROLISADO VINIE + RESVERATROL - 300G",
     "image": "img/products/v04.png",
     "priceText": "R$ 139,90"
@@ -37,7 +37,7 @@ const PRODUTOS_DB = [
   {
     "id": "v05",
     "category": "LINHA OFICIAL",
-    "priceNum": "79.90",
+    "priceNum": "89.90",
     "title": "VINI HAIR SUPLEMENTO DE VITAMINAS 20g - 30 CÁPSULAS",
     "image": "img/products/v05.png",
     "priceText": "R$ 89,90"
@@ -45,10 +45,26 @@ const PRODUTOS_DB = [
   {
     "id": "v06",
     "category": "LINHA OFICIAL",
-    "priceNum": "109.90",
+    "priceNum": "99.90",
     "title": "CREATINA FATOR X VINIE SABOR ABACAXI + RESVERATROL - 305G",
     "image": "img/products/v06.png",
     "priceText": "R$ 99,90"
+  },
+  {
+    "id": "v07",
+    "category": "LINHA OFICIAL",
+    "priceNum": "89.90",
+    "title": "BIOTINA BARÃO MEN LINE - 30 CÁPSULAS",
+    "image": "img/products/v07.png",
+    "priceText": "R$ 89,90"
+  },
+  {
+    "id": "v08",
+    "category": "LINHA OFICIAL",
+    "priceNum": "15.90",
+    "title": "COQUETELEIRA SHAKER VINIE PERFORMANCE",
+    "image": "img/products/v08.png",
+    "priceText": "R$ 15,90"
   },
   {
     "id": "p1",
@@ -89,6 +105,14 @@ const PRODUTOS_DB = [
     "title": "WHEY PROTEIN CONCENTRADO DUX 900G - COOKIES",
     "image": "img/products/p5.jpg",
     "priceText": "R$ 232,90"
+  },
+  {
+    "id": "p100",
+    "category": "PROTEÍNAS",
+    "priceNum": "179.90",
+    "title": "WHEY PROTEIN CONCENTRADO DUX 450G - CHOCOLATE BRANCO",
+    "image": "img/products/p100.jpg",
+    "priceText": "R$ 179,90"
   },
   {
     "id": "p6",
@@ -373,10 +397,10 @@ const PRODUTOS_DB = [
   {
     "id": "p41",
     "category": "SNACKS E GÉIS",
-    "priceNum": "10.90",
+    "priceNum": "14.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - PEANUT BUTTER",
     "image": "img/products/p41.jpg",
-    "priceText": "R$ 10,90"
+    "priceText": "R$ 14,90"
   },
   {
     "id": "p42",
@@ -397,18 +421,18 @@ const PRODUTOS_DB = [
   {
     "id": "p44",
     "category": "SNACKS E GÉIS",
-    "priceNum": "12.90",
+    "priceNum": "14.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - COOKIES AND CREAM",
     "image": "img/products/p44.jpg",
-    "priceText": "R$ 12,90"
+    "priceText": "R$ 14,90"
   },
   {
     "id": "p45",
     "category": "SNACKS E GÉIS",
-    "priceNum": "12.90",
+    "priceNum": "14.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - DUO CRUNCH",
     "image": "img/products/p45.jpg",
-    "priceText": "R$ 12,90"
+    "priceText": "R$ 14,90"
   },
   {
     "id": "p46",
@@ -421,18 +445,18 @@ const PRODUTOS_DB = [
   {
     "id": "p47",
     "category": "SNACKS E GÉIS",
-    "priceNum": "12.90",
+    "priceNum": "14.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - CREME DE COCO",
     "image": "img/products/p47.jpg",
-    "priceText": "R$ 12,90"
+    "priceText": "R$ 14,90"
   },
   {
     "id": "p48",
     "category": "SNACKS E GÉIS",
-    "priceNum": "12.90",
+    "priceNum": "14.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - BROWNIE DE CHOCOLATE",
     "image": "img/products/p48.jpg",
-    "priceText": "R$ 12,90"
+    "priceText": "R$ 14,90"
   },
   {
     "id": "p49",
@@ -539,36 +563,44 @@ const PRODUTOS_DB = [
     "priceText": "R$ 17,90"
   },
   {
+    "id": "v08",
+    "category": "ACESSÓRIOS",
+    "priceNum": "15.90",
+    "title": "COQUETELEIRA SHAKER VINIE PERFORMANCE",
+    "image": "img/products/v08.png",
+    "priceText": "R$ 15,90"
+  },
+  {
     "id": "p62",
     "category": "ELETRÓLITOS",
-    "priceNum": "6.90",
+    "priceNum": "7.90",
     "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: LIMONADA TROPICAL",
     "image": "img/products/p62.jpg",
-    "priceText": "R$ 6,90"
+    "priceText": "R$ 7,90"
   },
   {
     "id": "p63",
     "category": "ELETRÓLITOS",
-    "priceNum": "6.90",
+    "priceNum": "7.90",
     "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: MORANGO C/ KIWI",
     "image": "img/products/p63.jpg",
-    "priceText": "R$ 6,90"
+    "priceText": "R$ 7,90"
   },
   {
     "id": "p64",
     "category": "ELETRÓLITOS",
-    "priceNum": "6.90",
+    "priceNum": "7.90",
     "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: MELANCIA C/ ROMÃ",
     "image": "img/products/p64.jpg",
-    "priceText": "R$ 6,90"
+    "priceText": "R$ 7,90"
   },
   {
     "id": "p65",
     "category": "ELETRÓLITOS",
-    "priceNum": "6.90",
+    "priceNum": "7.90",
     "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: MARACUJÁ C/ MORANGO",
     "image": "img/products/p65.jpg",
-    "priceText": "R$ 6,90"
+    "priceText": "R$ 7,90"
   },
   {
     "id": "p66",
@@ -577,6 +609,14 @@ const PRODUTOS_DB = [
     "title": "MELATONINA 30 ML OCEAN DROP",
     "image": "img/products/p66.jpg",
     "priceText": "R$ 47,90"
+  },
+  {
+    "id": "v07",
+    "category": "VITAMINAS",
+    "priceNum": "89.90",
+    "title": "BIOTINA BARÃO MEN LINE - 30 CÁPSULAS",
+    "image": "img/products/v07.png",
+    "priceText": "R$ 89,90"
   },
   {
     "id": "p67",
@@ -621,10 +661,10 @@ const PRODUTOS_DB = [
   {
     "id": "p72",
     "category": "SNACKS E GÉIS",
-    "priceNum": "12.90",
+    "priceNum": "14.90",
     "title": "BARRA CRISP INTEGRAL MEDICA 45G C/12 - OVOMALTINE",
     "image": "img/products/p72.jpg",
-    "priceText": "R$ 12,90"
+    "priceText": "R$ 14,90"
   },
   {
     "id": "p73",
@@ -753,6 +793,94 @@ const PRODUTOS_DB = [
     "title": "BARRA WHEY GREGO NUTRATA 40G C/12 - HAVANNA DULCE DE LECHE LEGITIMO",
     "image": "img/products/p88.jpg",
     "priceText": "R$ 9,90"
+  },
+  {
+    "id": "p89",
+    "category": "ELETRÓLITOS",
+    "priceNum": "7.90",
+    "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: JABUTICABA",
+    "image": "img/products/p89.jpg",
+    "priceText": "R$ 7,90"
+  },
+  {
+    "id": "p90",
+    "category": "ELETRÓLITOS",
+    "priceNum": "7.90",
+    "title": "REPOSITOR DE ELETRÓLITOS LIQUIDZ SACHÊ 5G - SABOR: TANGERINA",
+    "image": "img/products/p90.jpg",
+    "priceText": "R$ 7,90"
+  },
+  {
+    "id": "p91",
+    "category": "PROTEÍNAS",
+    "priceNum": "99.90",
+    "title": "NUTRI WHEY PROTEIN POTE 907G - INTEGRALMEDICA - CHOCOLATE",
+    "image": "img/products/p91.jpg",
+    "priceText": "R$ 99,90"
+  },
+  {
+    "id": "p92",
+    "category": "PROTEÍNAS",
+    "priceNum": "94.90",
+    "title": "NUTRI WHEY PROTEIN REFIL CONCENTRADO 907G ORIGINAL - INTEGRALMEDICA - BAUNILHA",
+    "image": "img/products/p92.jpg",
+    "priceText": "R$ 94,90"
+  },
+  {
+    "id": "p93",
+    "category": "PROTEÍNAS",
+    "priceNum": "58.90",
+    "title": "ALBUMINA PROTEINA EM PÓ 420G - UÊVO - CHOCOLATE",
+    "image": "img/products/p93.jpg",
+    "priceText": "R$ 58,90"
+  },
+  {
+    "id": "p94",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "7.90",
+    "title": "SUPERCOFFEE 3.0 DOCE DE LEITE TO GO STICK",
+    "image": "img/products/p94.jpg",
+    "priceText": "R$ 7,90"
+  },
+  {
+    "id": "p95",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "7.90",
+    "title": "SUPERCOFFEE 3.0 LÍNGUA DE GATO TO GO STICK",
+    "image": "img/products/p95.jpg",
+    "priceText": "R$ 7,90"
+  },
+  {
+    "id": "p96",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "129.90",
+    "title": "SUPERCOFFEE 3.0 ORIGINAL 220G",
+    "image": "img/products/p96.jpg",
+    "priceText": "R$ 129,90"
+  },
+  {
+    "id": "p97",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "129.90",
+    "title": "SUPERCOFFEE 3.0 VANILLA LATTE 220G",
+    "image": "img/products/p97.jpg",
+    "priceText": "R$ 129,90"
+  },
+  {
+    "id": "p98",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "199.90",
+    "title": "SUPERCOFFEE 3.0 CHOCONILLA 380G",
+    "image": "img/products/p98.jpg",
+    "priceText": "R$ 199,90"
+  },
+  {
+    "id": "p99",
+    "category": "TERMOGÊNICOS",
+    "priceNum": "7.90",
+    "title": "SUPERCOFFEE 3.0 CHOCONILLA TO GO STICK",
+    "image": "img/products/p99.jpg",
+    "priceText": "R$ 7,90"
   }
 ];
 
@@ -1183,7 +1311,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return map[catName] || catName.toLowerCase().replace(/ /g, '-');
         };
 
-        const categories = [...new Set(PRODUTOS_DB.map(p => p.category))];
+        let categories = [...new Set(PRODUTOS_DB.map(p => p.category))];
+        
+        // Garante que ACESSÓRIOS seja a última seção
+        if (categories.includes("ACESSÓRIOS")) {
+            categories = categories.filter(c => c !== "ACESSÓRIOS");
+            categories.push("ACESSÓRIOS");
+        }
 
         categories.forEach(category => {
             const catId = getCategoryId(category);

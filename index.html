@@ -54,8 +54,8 @@
                 <li class="tab"><a href="#snacks-e-geis">Snacks e Géis</a></li>
                 <li class="tab"><a href="#hipercaloricos">Hipercalóricos</a></li>
                 <li class="tab"><a href="#vitaminas">Vitaminas</a></li>
-                <li class="tab"><a href="#acessorios">Acessórios</a></li>
                 <li class="tab"><a href="#eletrolitos">Eletrólitos</a></li>
+                <li class="tab"><a href="#acessorios">Acessórios</a></li>
             </ul>
         </section>
         <!-- PRODUTOS GERADOS DINAMICAMENTE -->
@@ -73,6 +73,10 @@
             <!-- Pela programação JS os itens criados do pedido vão encaixar aqui na DOM visível -->
         </div>
         <div class="sidebar-footer">
+            <div class="coupon-container" style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <input type="text" id="couponInput" placeholder="Cupom de desconto" style="flex: 1; padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: #fff; outline: none; font-family: 'Inter', sans-serif;" />
+                <button type="button" id="applyCouponBtn" style="padding: 10px 15px; border-radius: 8px; border: none; background: #d4af37; color: #111; font-weight: bold; cursor: pointer; transition: 0.3s;">Aplicar</button>
+            </div>
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cartTotalPrice">R$ 0,00</span>
