@@ -1,6 +1,6 @@
 
 const URL_PLANILHA_GOOGLE = 'https://docs.google.com/spreadsheets/d/1uQJiDBSCi8ZGXJ3IHOxzYlTWJR8vc1HQse6oMbpWgVg/gviz/tq?tqx=out:csv';
-const URL_PLANILHA_CUPONS = ''; // Link CSV da planilha de cupons
+const URL_PLANILHA_CUPONS = 'https://docs.google.com/spreadsheets/d/1MqjOYkfgomfgPC7PTrvmJEENdWRiAjCnNfpXMH69sps/gviz/tq?tqx=out:csv'; // Link CSV da planilha de cupons
 
 let CUPONS_DB = [{ codigo: 'kdbibi', desconto: 5 }]; // Inicializa com o cupom de teste
 let appliedCoupon = null;
