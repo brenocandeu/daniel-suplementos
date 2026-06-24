@@ -1,5 +1,9 @@
 
 const URL_PLANILHA_GOOGLE = 'https://docs.google.com/spreadsheets/d/1uQJiDBSCi8ZGXJ3IHOxzYlTWJR8vc1HQse6oMbpWgVg/gviz/tq?tqx=out:csv';
+const URL_PLANILHA_CUPONS = ''; // Link CSV da planilha de cupons
+
+let CUPONS_DB = [{ codigo: 'kdbibi', desconto: 5 }]; // Inicializa com o cupom de teste
+let appliedCoupon = null;
 
 const PRODUTOS_DB = [
   {
@@ -905,10 +909,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.getElementById('cartItemsContainer');
     const wishlistItemsContainer = document.getElementById('wishlistItemsContainer');
     const cartTotalPriceEl = document.getElementById('cartTotalPrice');
+    const couponInput = document.getElementById('couponInput');
+    const applyCouponBtn = document.getElementById('applyCouponBtn');
     
     let productCards = []; // Vai ser preenchido após renderizar
 
     const formatPrice = (p) => parseFloat(p).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+
+    if (applyCouponBtn && couponInput) {
+        couponInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.toUpperCase();
+        });
+
+        applyCouponBtn.addEventListener('click', () => {
+            const codigo = couponInput.value.trim().toLowerCase();
+            if (!codigo) {
+                alert('Digite um código de cupom válido.');
+                return;
+            }
+            
+            const foundCoupon = CUPONS_DB.find(c => c.codigo === codigo);
+            if (foundCoupon) {
+                appliedCoupon = foundCoupon;
+                // alert(`Cupom ${codigo.toUpperCase()} aplicado com sucesso! Desconto de ${foundCoupon.desconto}%`);
+                couponInput.value = '';
+                renderCart();
+            } else {
+                alert('Cupom inválido ou expirado.');
+            }
+        });
+    }
 
     const updateBadges = () => {
         cartCountEl.textContent = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -1005,7 +1035,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(cartItems.length === 0){
             cartItemsContainer.innerHTML = '<p style="color:#A0A0A0; text-align:center; margin-top:20px;">O seu carrinho está vazio.</p>';
-            cartTotalPriceEl.textContent = 'R$ 0,00';
+            cartTotalPriceEl.innerHTML = 'R$ 0,00';
             return;
         }
 
@@ -1026,7 +1056,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         });
-        cartTotalPriceEl.textContent = formatPrice(total);
+
+        if (appliedCoupon) {
+            const discountValue = total * (appliedCoupon.desconto / 100);
+            const totalWithDiscount = total - discountValue;
+            cartTotalPriceEl.innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                    <div><s style="font-size: 0.8em; color: #aaa; margin-right: 8px;">${formatPrice(total)}</s><span style="color: #2ecc71;">${formatPrice(totalWithDiscount)}</span></div>
+                    <div style="font-size: 0.7em; color: #d4af37; margin-top: 4px;">Cupom ${appliedCoupon.codigo.toUpperCase()} aplicado (-${appliedCoupon.desconto}%)</div>
+                </div>
+            `;
+        } else {
+            cartTotalPriceEl.textContent = formatPrice(total);
+        }
     };
 
     const renderWishlist = () => {
@@ -1080,12 +1122,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('checkoutBtn').addEventListener('click', () => {
         if(cartItems.length === 0) return alert('Seu carrinho está vazio!');
         let message = "Olá! Gostaria de finalizar o seguinte pedido:\n\n";
-        let total = 0;
+        let totalOriginal = 0;
         cartItems.forEach(i => {
-            total += i.price * i.quantity;
+            totalOriginal += i.price * i.quantity;
             message += `- ${i.quantity}x *${i.title}* (${formatPrice(i.price)})\n`;
         });
-        message += `\n*TOTAL: ${formatPrice(total)}*\n\nComo podemos prosseguir com o pagamento e a entrega?`;
+
+        if (appliedCoupon) {
+            const discountValue = totalOriginal * (appliedCoupon.desconto / 100);
+            const totalFinal = totalOriginal - discountValue;
+            message += `\nSubtotal: ${formatPrice(totalOriginal)}\n`;
+            message += `*Cupom utilizado:* ${appliedCoupon.codigo.toUpperCase()} (${appliedCoupon.desconto}% de desconto)\n`;
+            message += `*TOTAL FINAL: ${formatPrice(totalFinal)}*\n\nComo podemos prosseguir com o pagamento e a entrega?`;
+        } else {
+            message += `\n*TOTAL: ${formatPrice(totalOriginal)}*\n\nComo podemos prosseguir com o pagamento e a entrega?`;
+        }
+
         const whatsappNumber = "5517996821533";
         const encodedUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(encodedUrl, '_blank');
@@ -1268,22 +1320,118 @@ document.addEventListener('DOMContentLoaded', () => {
     // SISTEMA DE ESTOQUE GOOGLE SHEETS E RENDERIZAÇÃO
     function parseCSV(csvText) {
         const lines = csvText.split('\n').filter(l => l.trim() !== '');
-        const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim().toLowerCase());
+        if (lines.length === 0) return null;
+        
+        const parseLine = (line) => {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            for(let i=0; i<line.length; i++){
+                const char = line[i];
+                if(char === '"'){
+                    inQuotes = !inQuotes;
+                } else if(char === ',' && !inQuotes){
+                    result.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current);
+            return result.map(s => s.trim());
+        };
+
+        const headers = parseLine(lines[0]).map(h => h.toLowerCase());
         const idIndex = headers.indexOf('id');
         const estoqueIndex = headers.indexOf('estoque');
+        const nomeIndex = headers.indexOf('nome_produto') !== -1 ? headers.indexOf('nome_produto') : headers.indexOf('nome');
+        const valorIndex = headers.indexOf('valor') !== -1 ? headers.indexOf('valor') : headers.indexOf('preco');
+        const imagemIndex = headers.indexOf('imagem') !== -1 ? headers.indexOf('imagem') : headers.indexOf('url_imagem');
+        const categoriaIndex = headers.indexOf('categoria');
         
-        if(idIndex === -1 || estoqueIndex === -1) return null;
+        if(idIndex === -1) return null;
 
         const stockMap = {};
+
         for(let i=1; i<lines.length; i++) {
-            const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || lines[i].split(',');
-            const idCol = cols[idIndex]?.replace(/"/g, '')?.trim();
-            const estoqueCol = cols[estoqueIndex]?.replace(/"/g, '')?.trim()?.toLowerCase();
+            const cols = parseLine(lines[i]);
+            const cleanCol = (index) => index !== -1 && cols[index] ? cols[index] : '';
+
+            const idCol = cleanCol(idIndex);
+            const estoqueCol = estoqueIndex !== -1 ? cleanCol(estoqueIndex).toLowerCase() : 'sim';
+            const nomeCol = cleanCol(nomeIndex);
+            const valorCol = cleanCol(valorIndex);
+            const imagemCol = cleanCol(imagemIndex);
+            const categoriaCol = cleanCol(categoriaIndex);
             
             if(idCol) {
                 stockMap[idCol] = (estoqueCol === 'sim' || estoqueCol === 's' || estoqueCol === 'true');
+                
+                let existingProds = PRODUTOS_DB.filter(p => p.id === idCol);
+                
+                // Update common attributes for all instances of this product
+                if (existingProds.length > 0) {
+                    existingProds.forEach(existingProd => {
+                        existingProd.sortIndex = i;
+                        if (nomeCol) existingProd.title = nomeCol;
+                        if (valorCol) {
+                            existingProd.priceText = valorCol.includes('R$') ? valorCol : `R$ ${valorCol}`;
+                            let num = valorCol.replace(/[^\d,.-]/g, '').replace(',', '.');
+                            if(num) existingProd.priceNum = num;
+                        }
+                        if (imagemCol) existingProd.image = imagemCol;
+                    });
+                }
+                
+                // Handle multiple categories if provided in CSV
+                if (categoriaCol) {
+                    let categories = categoriaCol.split(',').map(c => c.trim().toUpperCase());
+                    categories.forEach(cat => {
+                        let prodInCat = existingProds.find(p => p.category === cat);
+                        if (!prodInCat) {
+                            // If product is not in this category, add it
+                            let num = valorCol.replace(/[^\d,.-]/g, '').replace(',', '.');
+                            let titleToUse = nomeCol || (existingProds[0] ? existingProds[0].title : '');
+                            let priceTextToUse = valorCol ? (valorCol.includes('R$') ? valorCol : `R$ ${valorCol}`) : (existingProds[0] ? existingProds[0].priceText : '');
+                            let priceNumToUse = num || (existingProds[0] ? existingProds[0].priceNum : '0.00');
+                            let imgToUse = imagemCol || (existingProds[0] ? existingProds[0].image : 'img/Logo2.png');
+                            
+                            if (titleToUse && priceTextToUse) {
+                                PRODUTOS_DB.push({
+                                    id: idCol,
+                                    category: cat,
+                                    priceNum: priceNumToUse,
+                                    title: titleToUse,
+                                    image: imgToUse, 
+                                    priceText: priceTextToUse,
+                                    sortIndex: i
+                                });
+                            }
+                        }
+                    });
+                } else if (existingProds.length === 0 && nomeCol && valorCol) {
+                    // New product without specific category
+                    let num = valorCol.replace(/[^\d,.-]/g, '').replace(',', '.');
+                    PRODUTOS_DB.push({
+                        id: idCol,
+                        category: "OUTROS",
+                        priceNum: num || '0.00',
+                        title: nomeCol,
+                        image: imagemCol || 'img/Logo2.png', 
+                        priceText: valorCol.includes('R$') ? valorCol : `R$ ${valorCol}`,
+                        sortIndex: i
+                    });
+                }
             }
         }
+        
+        // Ordena o array oficial para refletir exatamente a ordem das linhas da planilha
+        PRODUTOS_DB.sort((a, b) => {
+            let indexA = a.sortIndex !== undefined ? a.sortIndex : 999999;
+            let indexB = b.sortIndex !== undefined ? b.sortIndex : 999999;
+            return indexA - indexB;
+        });
+
         return stockMap;
     }
 
@@ -1417,5 +1565,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function loadCupons() {
+        if(typeof URL_PLANILHA_CUPONS !== 'undefined' && URL_PLANILHA_CUPONS.startsWith('http')) {
+            try {
+                const cacheBuster = URL_PLANILHA_CUPONS.includes('?') 
+                    ? `&t=${Date.now()}` 
+                    : `?t=${Date.now()}`;
+                    
+                const res = await fetch(URL_PLANILHA_CUPONS + cacheBuster, { cache: 'no-store' });
+                const csvText = await res.text();
+                const lines = csvText.split('\n').filter(l => l.trim() !== '');
+                if (lines.length > 0) {
+                    const parseLine = (line) => {
+                        const result = [];
+                        let current = '';
+                        let inQuotes = false;
+                        for(let i=0; i<line.length; i++){
+                            const char = line[i];
+                            if(char === '"'){
+                                inQuotes = !inQuotes;
+                            } else if(char === ',' && !inQuotes){
+                                result.push(current);
+                                current = '';
+                            } else {
+                                current += char;
+                            }
+                        }
+                        result.push(current);
+                        return result.map(s => s.trim());
+                    };
+
+                    const headers = parseLine(lines[0]).map(h => h.toLowerCase());
+                    const codigoIndex = headers.indexOf('codigo');
+                    const descontoIndex = headers.indexOf('desconto');
+                    
+                    if(codigoIndex !== -1) {
+                        const coupons = [];
+                        for(let i=1; i<lines.length; i++) {
+                            const cols = parseLine(lines[i]);
+                            const cleanCol = (index) => index !== -1 && cols[index] ? cols[index] : '';
+
+                            const codigo = cleanCol(codigoIndex).toLowerCase();
+                            const descontoRaw = cleanCol(descontoIndex);
+                            let descontoStr = descontoRaw.replace(/[^\d,.-]/g, '').replace(',', '.');
+                            let desconto = parseFloat(descontoStr) || 5; 
+
+                            if (codigo) {
+                                coupons.push({ codigo, desconto });
+                            }
+                        }
+                        if(coupons.length > 0) {
+                            CUPONS_DB = coupons; // Sobrescreve com os valores da planilha
+                        }
+                    }
+                }
+            } catch(e) {
+                console.error("Erro ao carregar cupons:", e);
+            }
+        }
+    }
+
+    loadCupons();
     loadStore();
 });
