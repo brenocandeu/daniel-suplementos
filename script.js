@@ -1063,7 +1063,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartTotalPriceEl.innerHTML = `
                 <div style="display: flex; flex-direction: column; align-items: flex-end;">
                     <div><s style="font-size: 0.8em; color: #aaa; margin-right: 8px;">${formatPrice(total)}</s><span style="color: #2ecc71;">${formatPrice(totalWithDiscount)}</span></div>
-                    <div style="font-size: 0.7em; color: #d4af37; margin-top: 4px;">Cupom ${appliedCoupon.codigo.toUpperCase()} aplicado (-${appliedCoupon.desconto}%)</div>
+                    <div style="font-size: 0.7em; color: #39FF14; margin-top: 4px;">Cupom ${appliedCoupon.codigo.toUpperCase()} aplicado (-${appliedCoupon.desconto}%)</div>
                 </div>
             `;
         } else {
