@@ -7,70 +7,6 @@ let appliedCoupon = null;
 
 const PRODUTOS_DB = [
   {
-    "id": "v01",
-    "category": "LINHA OFICIAL",
-    "priceNum": "149.90",
-    "title": "RESVERATROL TRANS VINIE 165mg - 60 CÁPSULAS",
-    "image": "img/products/v01.png",
-    "priceText": "R$ 149,90"
-  },
-  {
-    "id": "v02",
-    "category": "LINHA OFICIAL",
-    "priceNum": "69.90",
-    "title": "CREATINA FATOR X VINIE 100% PURA - 300G",
-    "image": "img/products/v02.png",
-    "priceText": "R$ 69,90"
-  },
-  {
-    "id": "v03",
-    "category": "LINHA OFICIAL",
-    "priceNum": "89.90",
-    "title": "CREATINA FATOR X VINIE SABOR UVA + RESVERATROL - 300G",
-    "image": "img/products/v03.png",
-    "priceText": "R$ 89,90"
-  },
-  {
-    "id": "v04",
-    "category": "LINHA OFICIAL",
-    "priceNum": "139.90",
-    "title": "COLÁGENO HIDROLISADO VINIE + RESVERATROL - 300G",
-    "image": "img/products/v04.png",
-    "priceText": "R$ 139,90"
-  },
-  {
-    "id": "v05",
-    "category": "LINHA OFICIAL",
-    "priceNum": "89.90",
-    "title": "VINI HAIR SUPLEMENTO DE VITAMINAS 20g - 30 CÁPSULAS",
-    "image": "img/products/v05.png",
-    "priceText": "R$ 89,90"
-  },
-  {
-    "id": "v06",
-    "category": "LINHA OFICIAL",
-    "priceNum": "99.90",
-    "title": "CREATINA FATOR X VINIE SABOR ABACAXI + RESVERATROL - 305G",
-    "image": "img/products/v06.png",
-    "priceText": "R$ 99,90"
-  },
-  {
-    "id": "v07",
-    "category": "LINHA OFICIAL",
-    "priceNum": "89.90",
-    "title": "BIOTINA BARÃO MEN LINE - 30 CÁPSULAS",
-    "image": "img/products/v07.png",
-    "priceText": "R$ 89,90"
-  },
-  {
-    "id": "v08",
-    "category": "LINHA OFICIAL",
-    "priceNum": "15.90",
-    "title": "COQUETELEIRA SHAKER VINIE PERFORMANCE",
-    "image": "img/products/v08.png",
-    "priceText": "R$ 15,90"
-  },
-  {
     "id": "p1",
     "category": "PROTEÍNAS",
     "priceNum": "172.90",
@@ -1444,7 +1380,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mapeamento correto dos IDs das seções baseados nas abas
         const getCategoryId = (catName) => {
             const map = {
-                "LINHA OFICIAL": "linha-oficial",
                 "PROTEÍNAS": "proteinas",
                 "PRÉ-TREINOS": "pre-treinos",
                 "CREATINA": "creatina",
