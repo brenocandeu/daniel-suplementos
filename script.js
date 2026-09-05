@@ -460,19 +460,29 @@ document.addEventListener('DOMContentLoaded', () => {
             return result.map(s => s.trim());
         };
 
-        const headers = parseLine(lines[0]).map(h => h.toLowerCase());
-        const idIndex = headers.indexOf('id');
-        const estoqueIndex = headers.indexOf('estoque');
-        const nomeIndex = headers.indexOf('nome_produto') !== -1 ? headers.indexOf('nome_produto') : headers.indexOf('nome');
-        const valorIndex = headers.indexOf('valor') !== -1 ? headers.indexOf('valor') : headers.indexOf('preco');
-        const imagemIndex = headers.indexOf('imagem') !== -1 ? headers.indexOf('imagem') : headers.indexOf('url_imagem');
-        const categoriaIndex = headers.indexOf('categoria');
+        let headers = parseLine(lines[0]).map(h => h.toLowerCase());
+        let idIndex = headers.indexOf('id');
+        let estoqueIndex = headers.indexOf('estoque');
+        let nomeIndex = headers.indexOf('nome_produto') !== -1 ? headers.indexOf('nome_produto') : headers.indexOf('nome');
+        let valorIndex = headers.indexOf('valor') !== -1 ? headers.indexOf('valor') : headers.indexOf('preco');
+        let imagemIndex = headers.indexOf('imagem') !== -1 ? headers.indexOf('imagem') : headers.indexOf('url_imagem');
+        let categoriaIndex = headers.indexOf('categoria');
         
-        if(idIndex === -1) return null;
+        let startIndex = 1;
+
+        if (idIndex === -1) {
+            idIndex = 0;
+            nomeIndex = 1;
+            valorIndex = 2;
+            estoqueIndex = 3;
+            imagemIndex = 4;
+            categoriaIndex = 5;
+            startIndex = 0;
+        }
 
         const stockMap = {};
 
-        for(let i=1; i<lines.length; i++) {
+        for(let i=startIndex; i<lines.length; i++) {
             const cols = parseLine(lines[i]);
             const cleanCol = (index) => index !== -1 && cols[index] ? cols[index] : '';
 
